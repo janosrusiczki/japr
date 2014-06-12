@@ -46,7 +46,7 @@ module JAPR
   DEFAULTS = {
     'output_path'   => 'assets',
     'display_path'  => nil,
-    'staging_path'  => '.asset_pipeline',
+    'staging_path'  => '../.asset_pipeline',
     'bundle'        => true,
     'compress'      => true,
     'gzip'          => false
