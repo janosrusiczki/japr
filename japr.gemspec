@@ -1,4 +1,4 @@
-require File.expand_path('../lib/japr/version', __FILE__)
+require File.expand_path('lib/japr/version', __dir__)
 
 Gem::Specification.new do |s|
   # Metadata

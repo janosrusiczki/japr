@@ -8,8 +8,6 @@ require 'minitest/pride'
 require './spec/helpers/extensions/ruby/module'
 require 'japr'
 
-include JAPR
-
 module MiniTest
   class Spec
     def source_path
