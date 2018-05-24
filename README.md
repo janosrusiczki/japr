@@ -3,7 +3,6 @@
 [![Gem Version](https://img.shields.io/gem/v/japr.svg)](https://rubygems.org/gems/japr)
 [![Build Status](https://img.shields.io/travis/janosrusiczki/japr/master.svg)](https://travis-ci.org/janosrusiczki/japr)
 [![Coveralls Status](https://img.shields.io/coveralls/github/janosrusiczki/japr/master.svg)](https://coveralls.io/r/janosrusiczki/japr?branch=master)
-[![Dependency Status](https://img.shields.io/gemnasium/janosrusiczki/japr.svg)](https://gemnasium.com/janosrusiczki/japr)
 
 **Update** On December 20, 2017 JAPR has been merged back into [Jekyll Asset Pipeline](https://github.com/matthodan/jekyll-asset-pipeline). As my time permits I'll try to maintain both repositories.
 
