@@ -17,3 +17,9 @@
 * [#20] Support Jekyll 3.5, Liquid 4.0
 * [#25] Permit root level output of asset files
 * Fix and refactor to eliminate Rubocop offenses
+
+## 0.4.2 (2017-10-11)
+
+* [#41] Support Jekyll 4.0
+* Drop support for Ruby < 2.3
+* Add support for Ruby 2.6
