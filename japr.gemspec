@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require File.expand_path('lib/japr/version', __dir__)
 
 Gem::Specification.new do |s|
@@ -22,11 +24,11 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/janosrusiczki/japr'
   s.license = 'MIT'
 
-  s.required_ruby_version = '>= 2.1.0'
+  s.required_ruby_version = '>= 2.3.0'
   s.rubygems_version = '2.2.2'
 
   # Runtime dependencies
-  s.add_runtime_dependency 'jekyll', '~> 3.5'
+  s.add_runtime_dependency 'jekyll', '>= 3.5', '< 5.0'
   s.add_runtime_dependency 'liquid', '~> 4.0'
 
   # Development dependencies

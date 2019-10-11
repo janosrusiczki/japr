@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module JAPR
   # The pipeline itself, the run method is where it all happens
-  # rubocop:disable ClassLength
+  # rubocop:disable Metrics/ClassLength
   class Pipeline
-    # rubocop:enable ClassLength
+    # rubocop:enable Metrics/ClassLength
     class << self
       # Generate hash based on manifest
       def hash(source, manifest, options = {})
@@ -11,9 +13,9 @@ module JAPR
           Digest::MD5.hexdigest(YAML.safe_load(manifest).map! do |path|
             "#{path}#{File.mtime(File.join(source, path)).to_i}"
           end.join.concat(options.to_s))
-        rescue StandardError => se
-          puts "Failed to generate hash from provided manifest: #{se.message}"
-          raise se
+        rescue StandardError => e
+          puts "Failed to generate hash from provided manifest: #{e.message}"
+          raise e
         end
       end
 
@@ -21,9 +23,9 @@ module JAPR
       # This is called from JAPR::LiquidBlockExtensions.render or,
       # to be more precise, from JAPR::CssAssetTag.render and
       # JAPR::JavaScriptAssetTag.render
-      # rubocop:disable ParameterLists
+      # rubocop:disable Metrics/ParameterLists
       def run(manifest, prefix, source, destination, tag, type, config)
-        # rubocop:enable ParameterLists
+        # rubocop:enable Metrics/ParameterLists
         # Get hash for pipeline
         hash = hash(source, manifest, config)
 
@@ -34,12 +36,12 @@ module JAPR
           puts "Processing '#{tag}' manifest '#{prefix}'"
           pipeline = new(manifest, prefix, source, destination, type, config)
           process_pipeline(hash, pipeline)
-        rescue StandardError => se
+        rescue StandardError => e
           # Add exception to cache
-          cache[hash] = se
+          cache[hash] = e
 
           # Re-raise the exception
-          raise se
+          raise e
         end
       end
 
@@ -82,9 +84,9 @@ module JAPR
     end
 
     # Initialize new pipeline
-    # rubocop:disable ParameterLists
+    # rubocop:disable Metrics/ParameterLists
     def initialize(manifest, prefix, source, destination, type, options = {})
-      # rubocop:enable ParameterLists
+      # rubocop:enable Metrics/ParameterLists
       @manifest = manifest
       @prefix = prefix
       @source = source
@@ -119,10 +121,10 @@ module JAPR
                           File.dirname(full_path))
         end
       end
-    rescue StandardError => se
+    rescue StandardError => e
       puts 'Asset Pipeline: Failed to load assets from provided ' \
-           "manifest: #{se.message}"
-      raise se
+           "manifest: #{e.message}"
+      raise e
     end
 
     # Convert assets based on the file extension if converter is defined
@@ -157,10 +159,10 @@ module JAPR
       if File.extname(asset.filename) == ''
         asset.filename = "#{asset.filename}#{@type}"
       end
-    rescue StandardError => se
+    rescue StandardError => e
       puts "Asset Pipeline: Failed to convert '#{asset.filename}' " \
-           "with '#{klass}': #{se.message}"
-      raise se
+           "with '#{klass}': #{e.message}"
+      raise e
     end
 
     # Bundle multiple assets into a single asset
@@ -183,10 +185,10 @@ module JAPR
 
         begin
           asset.content = klass.new(asset.content).compressed
-        rescue StandardError => se
+        rescue StandardError => e
           puts "Asset Pipeline: Failed to compress '#{asset.filename}' " \
-               "with '#{klass}': #{se.message}"
-          raise se
+               "with '#{klass}': #{e.message}"
+          raise e
         end
       end
     end
@@ -224,10 +226,10 @@ module JAPR
         File.open(File.join(directory, asset.filename), 'w') do |file|
           file.write(asset.content)
         end
-      rescue StandardError => se
+      rescue StandardError => e
         puts "Asset Pipeline: Failed to save '#{asset.filename}' to " \
-             "disk: #{se.message}"
-        raise se
+             "disk: #{e.message}"
+        raise e
       end
     end
 

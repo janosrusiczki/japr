@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JAPR
   # Helper module used by JAPR::AssetTag as well as
   # classed derived from it (Liquid tag block extensions)

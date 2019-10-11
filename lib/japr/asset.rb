@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JAPR
   # Holds an asset (file)
   class Asset

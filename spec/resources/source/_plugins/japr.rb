@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JAPR
   class TestConverter < JAPR::Converter
     def self.filetype

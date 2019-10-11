@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './spec/helper'
 
 module JAPR
@@ -12,11 +14,11 @@ module JAPR
       end
 
       it 'returns an array' do
-        MockClass.subclasses.must_be_instance_of(Array)
+        _(MockClass.subclasses).must_be_instance_of(Array)
       end
 
       it 'returned array contains all subclasses of MockSubclass' do
-        MockClass.subclasses.must_include(MockSubclass)
+        _(MockClass.subclasses).must_include(MockSubclass)
       end
     end
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JAPR
   # Base class for the tag templates
   # See https://github.com/janosrusiczki/japr#templates

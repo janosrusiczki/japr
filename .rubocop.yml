@@ -1,7 +1,10 @@
+AllCops:
+  TargetRubyVersion: 2.3
+
 # Do not count block length in spec files
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
 
-MethodLength:
+Metrics/MethodLength:
   Max: 15
 

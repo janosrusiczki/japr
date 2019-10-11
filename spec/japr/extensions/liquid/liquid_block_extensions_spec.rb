@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './spec/helper'
 
 module JAPR
@@ -12,16 +14,16 @@ module JAPR
       describe '#output_type' do
         subject { MockLiquidBlockClassMethods.output_type }
         it 'is an empty string' do
-          subject.must_be_instance_of(String)
-          subject.must_equal('')
+          _(subject).must_be_instance_of(String)
+          _(subject).must_equal('')
         end
       end
 
       describe '#tag_name' do
         subject { MockLiquidBlockClassMethods.tag_name }
         it 'is an empty string' do
-          subject.must_be_instance_of(String)
-          subject.must_equal('')
+          _(subject).must_be_instance_of(String)
+          _(subject).must_equal('')
         end
       end
     end
@@ -75,7 +77,7 @@ module JAPR
 
         it 'returns html of previously processed pipeline' do
           Pipeline.stub(:run, [pipeline, true]) do
-            subject.must_equal('foobar_html')
+            _(subject).must_equal('foobar_html')
           end
         end
       end
@@ -119,7 +121,7 @@ module JAPR
           $stdout.stub(:puts, nil) do
             Pipeline.stub(:run, [pipeline, false]) do
               Jekyll::StaticFile.stub(:new, 'foobar') do
-                subject.must_equal('foobaz_html')
+                _(subject).must_equal('foobaz_html')
               end
             end
           end
