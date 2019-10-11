@@ -7,7 +7,7 @@ module JAPR
     subject { JAPR::VERSION }
 
     it 'returns a string' do
-      subject.must_be_instance_of(String)
+      _(subject).must_be_instance_of(String)
     end
   end
 end
