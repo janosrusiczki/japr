@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JAPR
   # Base class for asset converters
   # See https://github.com/janosrusiczki/japr#asset-preprocessing

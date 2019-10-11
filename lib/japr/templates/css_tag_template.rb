@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JAPR
   # Default output for CSS assets
   class CssTagTemplate < JAPR::Template

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JAPR
   # Default output for JavaScript assets
   class JavaScriptTagTemplate < JAPR::Template
