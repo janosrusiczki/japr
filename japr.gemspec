@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
 
   # Development dependencies
   s.add_development_dependency 'minitest', '~> 5.2'
-  s.add_development_dependency 'rake', '~> 12.0'
+  s.add_development_dependency 'rake', '~> 13.0'
 
   # Files
   s.files = Dir['lib/**/*.rb', 'LICENSE', 'README.md', 'CHANGELOG.md'].to_a
