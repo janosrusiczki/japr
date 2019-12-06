@@ -11,7 +11,7 @@ module JAPR
         options = DEFAULTS.merge(options)
         begin
           Digest::MD5.hexdigest(YAML.safe_load(manifest).map! do |path|
-            "#{path}#{File.mtime(File.join(source, path)).to_i}"
+            "#{path}#{File.mtime(File.join('/', path)).to_i}"
           end.join.concat(options.to_s))
         rescue StandardError => e
           puts "Failed to generate hash from provided manifest: #{e.message}"
@@ -115,8 +115,8 @@ module JAPR
     # Collect assets based on manifest
     def collect
       @assets = YAML.safe_load(@manifest).map! do |path|
-        full_path = File.join(@source, path)
-        File.open(File.join(@source, path)) do |file|
+        full_path = File.join("/", path)
+        File.open(File.join("/", path)) do |file|
           JAPR::Asset.new(file.read, File.basename(path),
                           File.dirname(full_path))
         end
