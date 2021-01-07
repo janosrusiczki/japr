@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
 
   # Runtime dependencies
   s.add_runtime_dependency 'jekyll', '>= 3.5', '< 5.0'
-  s.add_runtime_dependency 'liquid', '~> 4.0'
+  s.add_runtime_dependency 'liquid', '>= 4', '< 6'
 
   # Development dependencies
   s.add_development_dependency 'minitest', '~> 5.2'
